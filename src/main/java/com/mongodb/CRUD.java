@@ -25,7 +25,7 @@ public class CRUD{
 	}
 
 	/**
-	 * 
+	 * create a new document in test collection 
 	 */
 	public void create() {
 		Document document = new Document().append("firstName", "Upanshu").append("lastName", "Chaudhary")
@@ -34,7 +34,7 @@ public class CRUD{
 	}
 
 	/**
-	 * 
+	 * read a document from test collection
 	 */
 	public void read() {
 		Document document = collection.find().first();
@@ -42,7 +42,7 @@ public class CRUD{
 	}
 
 	/**
-	 * 
+	 * update a document from test collection
 	 */
 	public void update() {
 		UpdateResult result = collection.updateOne(eq("firstName", "Upanshu"), combine(set("age", "23"), set("lastName", "Singh")));		
@@ -50,7 +50,7 @@ public class CRUD{
 	}
 
 	/**
-	 * 
+	 * delete a document from test collection
 	 */
 	public void delete() {
 		DeleteResult result = collection.deleteMany(eq("age", "22"));
